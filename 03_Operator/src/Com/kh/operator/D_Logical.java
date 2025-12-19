@@ -7,7 +7,7 @@ public class D_Logical {
 	/*
 	 * 논리 연산자
 	 *  - 논리 값을
-	 *  
+	 *  asdf
 	 *  AND && : a && b -> a와 b가 모두 참일 경우 true 반환.
 	 *  				   a와 b 둘 중 하나라도 거짓일 경우 false
 	 *  
