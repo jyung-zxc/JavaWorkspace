@@ -1,0 +1,14 @@
+package Com.kh.practice2.run;
+
+import Com.kh.practice2.func.CastingPractice1;
+import Com.kh.practice2.func.CastingPractice2;
+
+public class Run {
+	public static void main(String[] args) {
+		CastingPractice1 cp1 = new CastingPractice1();
+		//cp1.practice1();
+		
+		CastingPractice2 cp2 = new CastingPractice2();
+		cp2.practice2();
+	}
+}
