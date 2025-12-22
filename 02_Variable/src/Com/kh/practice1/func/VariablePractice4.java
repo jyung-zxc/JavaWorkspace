@@ -7,12 +7,12 @@ public class VariablePractice4 {
 	
 	public void practice4() {
 		
-		System.out.print("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		String text = sc.nextLine();
 		
-		System.out.println("Ã¹ ¹øÂ° ¹®ÀÚ : " + text.charAt(0));
-		System.out.println("µÎ ¹øÂ° ¹®ÀÚ : " + text.charAt(1));
-		System.out.println("¼¼ ¹øÂ° ¹®ÀÚ : " + text.charAt(2));
+		System.out.println("ì²« ë²ˆì§¸ ë¬¸ì : " + text.charAt(0));
+		System.out.println("ë‘ ë²ˆì§¸ ë¬¸ì : " + text.charAt(1));
+		System.out.println("ì„¸ ë²ˆì§¸ ë¬¸ì : " + text.charAt(2));
 		
 	}
 }

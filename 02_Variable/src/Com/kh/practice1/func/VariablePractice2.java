@@ -6,10 +6,10 @@ public class VariablePractice2 {
 	public void practice2() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Ã¹ ¹øÂ° Á¤¼ö : ");
+		System.out.print("ì²« ë²ˆì§¸ ì •ìˆ˜ : ");
 		int num1 = sc.nextInt();
 		
-		System.out.print("µÎ ¹øÂ° Á¤¼ö : ");
+		System.out.print("ë‘ ë²ˆì§¸ ì •ìˆ˜ : ");
 		int num2 = sc.nextInt();
 		
 		int sum = num1 + num2;
@@ -17,9 +17,9 @@ public class VariablePractice2 {
 		int multi = num1 * num2;
 		int divi = num1 / num2;
 		
-		System.out.println("´õÇÏ±â °á°ú : " + sum);
-		System.out.println("»©±â °á°ú : " + minus);
-		System.out.println("°öÇÏ±â °á°ú : " + multi);
-		System.out.println("³ª´©±â °á°ú : " + divi);
+		System.out.println("ë”í•˜ê¸° ê²°ê³¼ : " + sum);
+		System.out.println("ë¹¼ê¸° ê²°ê³¼ : " + minus);
+		System.out.println("ê³±í•˜ê¸° ê²°ê³¼ : " + multi);
+		System.out.println("ë‚˜ëˆ„ê¸° ê²°ê³¼ : " + divi);
 	}
 }

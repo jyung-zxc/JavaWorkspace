@@ -6,17 +6,17 @@ public class VariablePractice3 {
 	public void practice3() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("°¡·Î : ");
+		System.out.print("ê°€ë¡œ : ");
 		double num1 = sc.nextDouble();
 		
-		System.out.print("¼¼·Î : ");
+		System.out.print("ì„¸ë¡œ : ");
 		double num2 = sc.nextDouble();
 		
 		double area = num1 * num2;
 		double peri = (num1 + num2) * 2;
 		
-		System.out.println("¸éÀû : " + area);
-		System.out.println("µÑ·¹ : " + peri);
-		System.out.println("µÑ·¹ : " + (num1 + num2) * 2);
+		System.out.println("ë©´ì  : " + area);
+		System.out.println("ë‘˜ë ˆ : " + peri);
+		System.out.println("ë‘˜ë ˆ : " + (num1 + num2) * 2);
 	}
 }

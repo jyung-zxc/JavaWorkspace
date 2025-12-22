@@ -6,20 +6,20 @@ public class CastingPractice1 {
 	public void practice1() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("±¹¾î : ");
+		System.out.print("êµ­ì–´ : ");
 		double kor = sc.nextDouble();
 	
-		System.out.print("¿µ¾î : ");
+		System.out.print("ì˜ì–´ : ");
 		double eng = sc.nextDouble();
 		
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		double mat = sc.nextDouble();
 		
 		int total = (int)(kor + eng + mat);
 		int avg = total /3;
 		
-		System.out.println("ÃÑÁ¡ : " + total);
-		System.out.println("Æò±Õ : " + avg);
+		System.out.println("ì´ì  : " + total);
+		System.out.println("í‰ê·  : " + avg);
 		
 	}
 }
