@@ -131,16 +131,15 @@ public class ControlPractice {
 
 		switch (member) {
 		case "관리자":
-			System.out.println("회원관리, 게시글 관리, 게시글 작성, 게시글 조회, 댓글 작성");
-			break;
+			System.out.println("회원관리, 게시글 관리 ");
+			//break;
 		case "회원":
-			System.out.println("게시글 작성, 게시글 조회, 댓글 작성");
-			break;
+			System.out.println("게시글 작성, 댓글 작성");
+			//break;
 		case "비회원":
 			System.out.println("게시글 조회");
-			break;
-		default:
-			System.out.println("잘못된 입력입니다.");
+			//break;
+
 		}
 	}
 
@@ -152,21 +151,16 @@ public class ControlPractice {
 		double wei = sc.nextDouble();
 
 		double bmi = (wei / (hei * hei));
-
-		if (bmi < 18.5) {
-			System.out.println("BMI 지수 : " + bmi);
+		System.out.println("BMI 지수 : " + bmi);
+		if (bmi < 18.5) {		
 			System.out.println("저체중");
 		} else if (bmi >= 18.5 && bmi < 23) {
-			System.out.println("BMI 지수 : " + bmi);
 			System.out.println("정상체중");
 		} else if (bmi >= 23 && bmi < 25) {
-			System.out.println("BMI 지수 : " + bmi);
 			System.out.println("과체중");
 		} else if (bmi >= 25 && bmi < 30) {
-			System.out.println("BMI 지수 : " + bmi);
 			System.out.println("비만");
 		} else {
-			System.out.println("BMI 지수 : " + bmi);
 			System.out.println("고도비만");
 		}
 	}
@@ -200,42 +194,44 @@ public class ControlPractice {
 				result = num1 % num2;
 				break;
 			default:
-				System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
-			}
+				System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");			
+				return;
+			} 	
+		} else {
+			System.out.println("오류");
+			return;
 		}
 		System.out.println(num1 + " " + opr + " " + num2 + " " + "=" + " " + result);
 	}
 
 	public void practice9() {
 		System.out.print("중간 고사 점수 :");
-		int mid = sc.nextInt();
+		int midtest = sc.nextInt();
 		System.out.print("기말 고사 점수 :");
-		int fin = sc.nextInt();
+		int finaltest = sc.nextInt();
 		System.out.print("과제 점수 :");
-		int hw = sc.nextInt();
+		int report = sc.nextInt();
 		System.out.print("출석 회수 :");
 		double day = sc.nextDouble();
 
-		double mid1 = mid * 0.2;
-		double fin1 = fin * 0.3;
-		double hw1 = hw * 0.3;
+		double mid1 = midtest * 0.2;
+		double fin1 = finaltest * 0.3;
+		double rp1 = report * 0.3;
 
-		double sum = mid1 + fin1 + hw1 + day;
-
-		String result = "";
+		double total = mid1 + fin1 + rp1 + day;
 
 		System.out.println("============ 결과 ============");
-		if (sum >= 70 && day > 14) {
+		if (total >= 70 && day > 14) {
 			System.out.println("중간 고사 점수(20) : " + mid1);
 			System.out.println("기말 고사 점수(30) : " + fin1);
-			System.out.println("과제 점수	  (30) : " + hw1);
+			System.out.println("과제 점수	  (30) : " + rp1);
 			System.out.println("출석 점수    (20) : " + day);
-			System.out.println("총점 : " + sum);
+			System.out.println("총점 : " + total);
 			System.out.println("Pass");
 		} else if (day <= 14) {
 			System.out.println("Fail [출석 회수 부족 (" + (int)day + "/20)]");
 		} else {
-			System.out.println("총점 : " + sum);
+			System.out.println("총점 : " + total);
 			System.out.println("Fail");
 		}
 	}
@@ -286,6 +282,7 @@ public class ControlPractice {
 			break;
 			default:
 				System.out.println("잘못 입력하셨습니다");
+				return;
 		}
 		
 	}
@@ -294,20 +291,29 @@ public class ControlPractice {
 		System.out.print("비밀번호 입력(1000~9999) : ");
 		int pw = sc.nextInt();
 
-		if(pw >= 1000 && pw <= 9999) {
+		 /*
+		  String pwd =sc.next();
+		  char pwd1 = pwd.charAt(0);
+		  char pwd2 = pwd.charAt(1);
+		  char pwd3 = pwd.charAt(2);
+		  char pwd4 = pwd.charAt(3);
+		 */		
+		if(pw >= 1000 && pw <= 9999) {	
 			int pw1 = pw / 1000;
 			int pw2 = (pw/100) % 10;
 			int pw3 = (pw/10) % 10;
 			int pw4 = pw % 10;
-			
 			if(pw1 == pw2 || pw1 == pw3 || pw1 == pw4 ||
 			   pw2 == pw3 || pw2 == pw4 || pw3 == pw4) {
 				System.out.println("실패(중복 값 있음)");
+				return;
 			}else {
 				System.out.println("성공");
+				return;
 			}	
 		}else {
 			System.out.println("자리수 안맞음");
+			return;
 		}
 	}
 }
