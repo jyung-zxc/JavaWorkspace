@@ -210,12 +210,77 @@ public class LoopPractice {
 			return;
 		}
 		
+		//소수는 1부터 n까지 나누었을 때 나누어 떨어지는 수가 1과 n뿐인 수
+		//100 % 10 == 0
+		boolean isPrime = true;
+		
+		for (int i = 2; i<num; i++) {
+			if(num % i == 0) {
+				System.out.println("소수가 아닙니다.");
+				isPrime = false;
+				break;
+			}
+		}
+		if(isPrime) {
+			System.out.println("소수입니다.");
+		}
+	}
+	
+	public void practice11() {
+		System.out.print("숫자 : ");
+		int num = sc.nextInt();
+		
+		int cnt = 0;
+		if(num<2) {
+			System.out.println("잘못 입력하였습니다.");
+			return;
+		}
+		
+		//외부반복문 : 2~ 입력한 값 까지 반복
+		//내부반복문 : 현재 값이 소수인지 아닌지 판단.
+		
+		//num=5
+		//i -> 2,3,4,5
+		for(int i = 2;i<=num;i++) {
+			boolean isPrime = true;
+			
+			for(int j=2;j<=i-1;j++) {
+				if(i % j == 0) {
+					isPrime = false;
+					break;
+				}
+				
+			}
+			if(isPrime) {
+				System.out.print(i + " ");
+				cnt++;
+			}
+		}
+		System.out.println();
+		System.out.println(2 + "부터 " + num +"까지 소수의 개수는 " + cnt +"개입니다.");
+		return;
+	}
+	
+	/*
+	public void practice10() {
+		System.out.print("숫자 : ");
+		int num = sc.nextInt();
+		
+		if(num<2) {
+			System.out.println("잘못 입력하였습니다.");
+			return;
+		}
+		
 		if(num==2) {
 			System.out.println("소수입니다.");
 			return;
 		}
 		
-		for(int i=2;i<num;i++) {
+		if(num % 2 == 0) {
+			System.out.println("소수가 아닙니다.");
+		}
+		
+		for(int i=3;i*i<=num;i+=2) {
 			if(num % i == 0) {
 				System.out.println("소수가 아닙니다.");
 				return;
@@ -230,21 +295,29 @@ public class LoopPractice {
 		System.out.print("숫자 : ");
 		int num = sc.nextInt();
 		
-		int num2 = 0;
+		int count = 0;
 		
 		if(num<2) {
 			System.out.println("잘못 입력하였습니다.");
 			return;
 		}
-		for(int i=2;i<num;i++) {
-			if(!(num % i == 0)) {
-				System.out.println(i);
-				num2++;
+		for(int i=2;i<=num;i++) {
+			int prime = 0;
+			for(int j = 2; j * j <= i; j++) {
+				if(i % j == 0) {
+				prime = 1;
+				break;
+			}
+		}	
+			if(prime == 0) {
+				System.out.print(i + " ");
+				count++;
 			}
 		}
-		System.out.println(2 + "부터 " + num +"까지 소수의 개수는" + num2 +"개입니다.");
+		System.out.println();
+		System.out.println(2 + "부터 " + num +"까지 소수의 개수는 " + count +"개입니다.");
 		return;
-	}
+	} */
 	
 	public void practice12() {
 			System.out.print("자연수 하나를 입력하세요 : ");
@@ -255,9 +328,11 @@ public class LoopPractice {
 				System.out.println("잘못 입력했습니다.");
 			} else {	
 			for(int i=1;i<=num;i++) {
+				// 2와 혹은 3의 배수이면 출력
 				if(i % 2 == 0 || i % 3 == 0) {
 					System.out.print(i + " ");	
 				}
+				// 2와3의 공배우시면 갯수 카운팅
 				if(i % 2 == 0 && i % 3 == 0) {
 					count++;	
 				}
