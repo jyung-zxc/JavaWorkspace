@@ -1,0 +1,51 @@
+package com.kh.chap06.method.model.vo;
+
+public class MethodTest1 {
+	/*
+	 * 메서드
+	 * [표현법]
+	 * 접근제한자 예약어 자료형 메서드명([매개변수]){
+	 *	//수행할 코드
+	 *
+	 *	return 반환할 값; (생략가능)
+	 *}
+	 */
+	
+	// 1. 매개변수가 없고, 반환할 값도 없는 메서드
+	public void method1() {
+		System.out.println("매개변수 x, 반환값 x");
+		
+		//return;
+	}
+	
+	// 2. 매개변수는 없고, 반환할 값은 있는 메서드
+	public int method2(){
+		System.out.println("매개변수 x, 반환값 o");
+		int random = (int)(Math.random()* 100 + 1);
+	
+		return random;
+	}
+	
+	// 3. 매개변수는 있고, 반환할 값은 없는 메서드
+	public void method3(int x, int y) {
+		int min = 0;
+		int max = 0;
+		
+		
+		if( x > y ) {
+			min = y;
+			max = x;
+		} else {
+			min = x ;
+			max = y ;
+		}
+		
+		System.out.println("최소값 : "+min+ ", 최댓값 : "+max);
+	}
+	
+	// 4. 매개변수가 있고, 반환할 값도 있는 메서드
+	public int multiply(int a, int b){
+		
+		return a*b;
+	}
+}

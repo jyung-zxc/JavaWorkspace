@@ -1,10 +1,10 @@
 package Com.kh.practice.run;
 
-import Com.kh.practice.array.ArrayPracice;
+import Com.kh.practice.dimension.DimensionPractice;
 
 public class Run {
 	public static void main(String[] args) {
-		ArrayPracice ap = new ArrayPracice();
-		ap.practice12();
+		DimensionPractice di = new DimensionPractice();
+		di.practice5();
 	}
 }
