@@ -11,7 +11,9 @@ public class Shape {
 	}
 	
 	public Shape(int type, double height, double width) {
-		
+		this.type = type;
+		this.height = height;
+		this.width = width;
 	}
 	
 	public String inforamtion() {

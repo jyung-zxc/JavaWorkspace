@@ -26,7 +26,6 @@ public class SquareController {
 	}
 	
 	public String print() {
-		System.out.println("사각형 "+s.inforamtion());
 		return "사각형 "+s.inforamtion();
 		
 	}

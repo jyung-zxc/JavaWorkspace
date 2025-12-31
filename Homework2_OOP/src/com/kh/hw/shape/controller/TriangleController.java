@@ -17,7 +17,6 @@ public class TriangleController {
 	}
 	
 	public String print() {
-		System.out.println("삼각형 "+s.inforamtion());
 		return "삼각형 "+s.inforamtion();
 	}
 }
