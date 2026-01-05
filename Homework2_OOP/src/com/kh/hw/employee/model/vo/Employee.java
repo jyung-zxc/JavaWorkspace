@@ -82,10 +82,16 @@ public class Employee {
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
 	}
-	
+		
 	public String printEmployee() {
 		//2 김길순 여 010-5678-1234 영업부 3000000 0.15
 		return empNo+" "+name+" "+gender+" "+phone+" "+dept+" "+salary+" "+bonus;
 	}
+	
+//	@Override
+//	public String toString() {
+//		return empNo+" "+name+" "+gender+" "+phone+" "+dept+" "+salary+" "+bonus;
+//		
+//	}
 	
 }

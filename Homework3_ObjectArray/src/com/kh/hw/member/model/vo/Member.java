@@ -73,4 +73,12 @@ public class Member {
 	public String inform() {
 		return id+" "+name+" "+password+" "+email+" "+gender+" "+age;
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Member [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
+//				+ gender + ", age=" + age + "]";
+//	}
+	
+	
 }
