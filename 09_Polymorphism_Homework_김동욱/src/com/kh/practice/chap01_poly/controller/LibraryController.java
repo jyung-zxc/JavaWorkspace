@@ -5,6 +5,7 @@ import com.kh.practice.chap01_poly.model.vo.*;
 public class LibraryController {
 	private Member mem = null; // null로 명시초기화
 	private Book[] bList = new Book[5]; // 크기 5 할당
+
 	{
 		bList[0] = new CookBook("백종원의 집밥", "백종원", "tvN", true);
 		bList[1] = new AniBook("한번 더 해요", "미티", "원모어", 19);
@@ -12,28 +13,46 @@ public class LibraryController {
 		bList[3] = new CookBook("이혜정의 얼마나 맛있게요", "이혜정", "문학", false);
 		bList[4] = new CookBook("최현석 날 따라해봐", "최현석", "소금책", true);
 	}
-	
+
 	public void insertMember(Member mem) {
 		this.mem = mem;
 	}
-	
+
 	public Member myinfo() {
-		
 		return mem;
 	}
 
 	public Book[] selectAll() {
-		for(int i=0;i<bList.length; i++) {
-			System.out.println(i+"번 도서 : "+bList[i]);
-		}
 		return bList;
 	}
-	
+
 	public Book[] searchBook(String keyword) {
-		return bList;
+		// 검색 결과를 담아줄 새로운 Book 객체 배열 생성
+		// 검색 결과 도서 목록이 최대 5개일 수 있으니 임의로 크기 5 할당
+		Book[] searchBookList = new Book[5];
+
+		int index = 0;
+		for (Book b : bList) {
+			if (b.getTitle().contains(keyword)) {
+				// keyword 가 포함된 도서.
+				searchBookList[index++] = b;
+			}
+		}
+
+		return searchBookList;
 	}
-	
+
 	public int rentBook(int index) {
-		return index;
+		int result = 0;
+
+		Book b = bList[index];
+		if (b instanceof AniBook && mem.getAge() < ((AniBook) b).getAccessAge()) {
+			result = 1;
+		} else if (b instanceof CookBook && ((CookBook) b).isCoupon()) {
+			mem.setCouponCount(mem.getCouponCount() + 1);
+			result = 2;
+		}
+
+		return result;
 	}
 }

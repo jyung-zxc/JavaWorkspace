@@ -4,7 +4,7 @@ public class Member {
 	private String name; // 회원명
 	private int age; // 회원나이
 	private char gender; // 성별
-	private int couponCount; //요리학원쿠폰개수 = 0
+	private int couponCount = 0; //요리학원쿠폰개수 = 0
 	
 	public Member() {
 		
@@ -15,6 +15,8 @@ public class Member {
 		this.age = age;
 		this.gender = gender;
 	}
+
+	
 
 	public String getName() {
 		return name;
@@ -38,6 +40,14 @@ public class Member {
 
 	public void setGender(char gender) {
 		this.gender = gender;
+	}
+
+	public int getCouponCount() {
+		return couponCount;
+	}
+
+	public void setCouponCount(int couponCount) {
+		this.couponCount = couponCount;
 	}
 
 	@Override
