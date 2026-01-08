@@ -3,9 +3,16 @@ package com.kh.chap03_wrapper;
 public class Run {
 	public static void main(String[] args) {
 		/*
-		 * Wrapper 클래스 => 기본자료형을 객체로 포장(Wrapping)해주는 클래스들 기본자료형 <-----> Wrapper 클래스
-		 * boolean Boolean char Character byte Byte short Short int Integer long Long
-		 * float Float double Double
+		 * Wrapper 클래스 => 기본자료형을 객체로 포장(Wrapping)해주는 클래스들 
+		 * 기본자료형 <-----> Wrapper 클래스
+		 * boolean 			Boolean 
+		 * char 			Character 
+		 * byte 			Byte 
+		 * short 			Short 
+		 * int 				Integer 
+		 * long 			Long
+		 * float 			Float 
+		 * double 			Double
 		 */
 
 		int num1 = 10;

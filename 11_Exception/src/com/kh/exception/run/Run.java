@@ -1,8 +1,9 @@
 package com.kh.exception.run;
 
-import com.kh.exception.controller.A_UncheckedException;
+import com.kh.exception.controller.*;
 
-public class Run {
+public class Run{
+	
 	/*
 	 * 에러(오류) 종류
 	 *  - 시스템 오류
@@ -25,8 +26,16 @@ public class Run {
 	 *  - 예외처리를 하지 않으면 프로그램 실행중 예의(오류)가 발생하는 경우 프로그램이 작동 중지 한다.
 	 *  
 	 */
-	public static void main(String[] args) {
+	
+	public static void main(String[] args) throws C_CustomException{
 		A_UncheckedException au = new A_UncheckedException();
-		au.method1();
+		//au.method3();
+		
+		B_CheckedException bc = new B_CheckedException();
+		bc.method1();
+		
+		//에러 강제 발생
+		// throw new 에러클래스 생성자(에러메세지);
+		throw new C_CustomException("에러 발생");
 	}
 }
