@@ -17,6 +17,7 @@ public class C_StringTokenizer {
 
 //		   방법2. 분리된 각각의 문자열들을 토큰으로 취급하여 관리하는 방법
 //		   StringTokenizer stn = new StringTokenizer(문자열, 구분자);
+		
 		StringTokenizer stn = new StringTokenizer(str, ",");
 		System.out.println("분리된 문자열의 갯수 : " + stn.countTokens());
 //		 System.out.println(stn.nextToken());

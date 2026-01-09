@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 
 public class DateRun {
 	public static void main(String[] args) {
-		test2();
+		test1();
 	}
 	
 	/*
