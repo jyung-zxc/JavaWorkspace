@@ -1,10 +1,7 @@
 package com.kh.practice.book.view;
 
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
-import java.util.TimeZone;
 
 import com.kh.practice.book.controller.BookController;
 import com.kh.practice.book.model.vo.Book;
@@ -23,10 +20,12 @@ public class BookMenu {
 
 	public void mainMenu() {
 		while (true) {
-			System.out.print(
-					"1. 도서 추가 저장 \r\n" + "2. 저장 도서 출력 \r\n" + "9. 프로그램 끝내기 \r\n" + "메뉴 번호 :");
+			System.out.print("1. 도서 추가 저장 \r\n" 
+							+ "2. 저장 도서 출력 \r\n" 
+							+ "9. 프로그램 끝내기 \r\n" 
+							+ "메뉴 번호 :");
 			int menu = sc.nextInt();
-
+			sc.nextLine();
 			switch (menu) {
 			case 1:
 				fileSave();
@@ -45,7 +44,7 @@ public class BookMenu {
 
 	public void fileSave() {
 		System.out.print("도서 명 :");
-		String title = sc.next();
+		String title = sc.nextLine();
 		
 		System.out.print("저자 명 :");
 		String author = sc.next();
@@ -66,18 +65,29 @@ public class BookMenu {
 		
 		Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day);	
+		// 입력 받은 출판날짜를 split()를 통해 년, 월, 일로 나누고 Calendar에 담음
 		
+		Book b = new Book(title, author, price, cal, discount);
+		// 각 요소와 새로 만든 Calendar를 Book 객체에 담고
 		
-		//System.out.println(cal.get(Calendar.YEAR)+" "+cal.get(Calendar.MONTH)+" "+cal.get(Calendar.DATE));
-		//Book
-		//bc.fileSave(bArr);
-			// 입력 받은 출판날짜를 split()를 통해 년, 월, 일로 나누고 Calendar에 담음
-			// 각 요소와 새로 만든 Calendar를 Book 객체에 담고
-			// 비어있는 Book객체 배열(bArr)에 담아 bc에 fileSave()에 매개변수로 전달
+		for(int i = 0;i<bArr.length; i++) {
+			if(bArr[i] == null) {
+				bArr[i] = b;
+				break;
+			}
+		}
+		// 비어있는 Book객체 배열(bArr)에 담아 bc에 fileSave()에 매개변수로 전달
+		bc.fileSave(bArr);
+		
 	}
 
 	public void fileRead() {
-		bc.fileRead();
+		Book[] bArr = bc.fileRead();
+		for(Book b : bArr) {
+			if(b != null) {
+				System.out.println(b);
+			}
+		}
 		// bc에 fileRead()의 반환 값을 가지고 저장된 데이터 출력
 	}
 }
