@@ -50,13 +50,15 @@ public class BookMenu {
 	}
 
 	public void insertBook() {
-		System.out.print("1. 도서명 입력받기 : ");
+		System.out.print("1. 도서명 : ");
 		String title = sc.nextLine();
-		System.out.print("2. 저자명 입력받기 : ");
+		System.out.print("2. 저자명 : ");
 		String author = sc.nextLine();
-		System.out.print("3. 장르 입력받기 1.인문 / 2.자연과학 / 3.의료 / 4.기타) : ");
+		System.out.print("3. 장르(1.인문 / 2.자연과학 / 3.의료 / 4.기타) : ");
 		int category = sc.nextInt();
 
+//		String[] arr = ("인문","자연과학","의료","기타");
+//		Book bk = new Book(title, author, arr[category-1, price);
 		String cg = "";
 		switch (category) {
 		case 1:
@@ -79,20 +81,21 @@ public class BookMenu {
 		System.out.print("4. 가격 입력받기 : ");
 		int price = sc.nextInt();
 		sc.nextLine();
+
 		Book bk = new Book(title, author, cg, price);
 
 		bc.insertBook(bk);
 	}
 
 	public void selectList() {
-		ArrayList result = bc.selectList();
-		ArrayList<Book> bookList = result;
-		
-		if(result == null) {
+
+		ArrayList<Book> bookList = bc.selectList();
+
+		if (bookList.isEmpty()) {
 			System.out.println("존재하는 도서가 없습니다.");
-		}else {
-			for(Book b : bookList) {
-				System.out.println(bookList);
+		} else {
+			for (Book b : bookList) {
+				System.out.println(b);
 			}
 		}
 	}
@@ -100,15 +103,15 @@ public class BookMenu {
 	public void searchBook() {
 		System.out.print("검색할 도서명 키워드 : ");
 		String keyword = sc.nextLine();
+
+		ArrayList<Book> searchList = bc.searchBook(keyword);
 		
-		ArrayList result = bc.searchBook(keyword);
-		ArrayList<Book> searchList = result;
-		
-		if(result == null) {
+
+		if (searchList.isEmpty()) {
 			System.out.println("검색 결과가 없습니다.");
-		}else {
-			for(Book b : searchList) {
-				System.out.println(searchList);
+		} else {
+			for (Book b : searchList) {
+				System.out.println(b);
 			}
 		}
 	}
@@ -119,21 +122,20 @@ public class BookMenu {
 		System.out.print("삭제할 저자명 : ");
 		String author = sc.nextLine();
 
-		Book result = bc.deleteBook(title, author);
+		Book remove = bc.deleteBook(title, author);
 
-		if(result == null) {
+		if (remove == null) {
 			System.out.println("삭제할 도서를 찾지 못했습니다.");
-		}else {
+		} else {
 			System.out.println("성공적으로 삭제되었습니다.");
-			}
 		}
+	}
 
 	public void ascBook() {
-		try {
-		if(bc.ascBook() == 1) {
+		int result = bc.ascBook();
+		if (result == 1) {
 			System.out.println("정렬에 성공하였습니다.");
-		}
-		}catch(Exception e) {
+		} else {
 			System.out.println("정렬에 실패하였습니다.");
 		}
 	}
