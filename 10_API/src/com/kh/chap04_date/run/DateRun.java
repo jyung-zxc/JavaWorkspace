@@ -25,7 +25,7 @@ public class DateRun {
 		System.out.println(cal2);
 	
 		//현재 년/월/일 조회
-		System.out.println(cal1.get(Calendar.YEAR));
+		System.out.println(cal1.get(Calendar.YEAR)+"-"+(cal1.get(Calendar.MONTH)+1));
 		System.out.println(cal1.get(Calendar.MONTH)+1); // 월은 0부터 샌다
 		System.out.println(cal1.get(Calendar.DATE));
 		
