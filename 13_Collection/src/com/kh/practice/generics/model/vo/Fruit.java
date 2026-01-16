@@ -2,7 +2,7 @@ package com.kh.practice.generics.model.vo;
 
 import java.util.Objects;
 
-public class Fruit {
+public class Fruit extends Farm{
 	private String name;
 	
 	public Fruit() {
@@ -10,7 +10,7 @@ public class Fruit {
 	}
 
 	public Fruit(String kind, String name) {
-		super();
+		super(kind);
 		this.name = name;
 	}
 
@@ -24,7 +24,7 @@ public class Fruit {
 
 	@Override
 	public String toString() {
-		return name;
+		return super.getKind()+" : "+name;
 	}
 
 	@Override
