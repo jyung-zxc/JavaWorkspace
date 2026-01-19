@@ -5,11 +5,11 @@ import java.util.Date;
 public class KakaoUserInfoResponse {
 	/*
 	 * DTO (Data Transfer Object
-	 *  - 값을 전달하기 위해 성송하는 클래스
+	 *  - 값을 전달하기 위해 사용하는 클래스
 	 *  
 	 *  - API서버, IB서버 통해서 데이터를 문자/수신 하기 위한 용도로 객체로 객체들을 정의하는 클래스
 	 *  
-	 *  - VC클래스와 다르게 해야하며 "숭/수신"이 주 목적이기 떄문에 불필요한 메서드들이
+	 *  - VC클래스와 다르게 해야하며 "송/수신"이 주 목적이기 떄문에 불필요한 메서드들이
 	 *    존재하지 않는다(equals , hashmode, setter ....
 	 *    
 	 *  - api 서버들에는 다양한 서비스들이 존재하며, 
@@ -22,7 +22,7 @@ public class KakaoUserInfoResponse {
 	 *  
 	 *  
 	 * VO(Value, Object)
-	 *  - 가치가 있는 클래스를 표현하기 위한 모적으로 사용하지
+	 *  - 가치가 있는 클래스를 표현하기 위한 목적으로 사용하는 클래스
 	 *  
 	 *  - 객체지향적으로 설계된 클래스
 	 *  

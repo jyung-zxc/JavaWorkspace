@@ -1,6 +1,6 @@
 
 package com.kh.chap02_lamda.model.functional;
 
-public class LambdaTest02 {
-	void print();
+public interface LambdaTest02 {
+	void print(String x);
 }

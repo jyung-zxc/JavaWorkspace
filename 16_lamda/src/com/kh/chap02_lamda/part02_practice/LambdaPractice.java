@@ -18,8 +18,8 @@ public class LambdaPractice {
 
 		// 3. 매개변수의 () 생략가능
 		// - 단 매개변수가 딱 1개있는
-		LambdaTest02 lmabd3 = str -> {
-			System.out.println(lmabd3);
+		LambdaTest02 lmabda3 = str -> {
+			System.out.println(str);
 		};
 
 //		4. 중괄호 생략 가능
